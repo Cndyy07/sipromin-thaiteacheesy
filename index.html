@@ -1,0 +1,1460 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SI Promin - Thai Tea Cheesy</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons for clean UI assets -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Google Fonts: Plus Jakarta Sans for Premium Modern Look -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .cheese-gradient {
+      background: linear-gradient(135deg, #FFB03A 0%, #FF8C00 100%);
+    }
+    .tea-gradient {
+      background: linear-gradient(135deg, #FFF3E0 0%, #FFE0B2 100%);
+    }
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    /* Smooth transitions for interactive elements */
+    .transition-all-300 {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  </style>
+</head>
+<body class="bg-amber-50/30 text-stone-800 min-h-screen">
+
+  <!-- NAVIGATION BAR (RESPONSIVE) -->
+  <nav class="sticky top-0 z-50 glass-effect border-b border-orange-100 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-20 items-center">
+
+        <!-- LOGO THAI TEA SVG --> 
+        <div class="flex items-center gap-3">
+        <div class="w-12 h-12 bg-orange-500 rounded-2xl flex items-center justify-center shadow-lg">
+            <svg width="35" height="35" viewBox="0 0 64 64" fill="none">
+                <!-- Sedotan -->
+                <path d="M38 8L44 2" stroke="white" stroke-width="4" stroke-linecap="round"/>
+
+                <!-- Tutup Cup -->
+                <ellipse cx="32" cy="18" rx="14" ry="4" fill="#FFE082"/>
+
+                <!-- Cup -->
+                <path d="M20 18H44L40 50C39.5 54 36.5 56 32 56C27.5 56 24.5 54 24 50L20 18Z"
+                      fill="white"/>
+
+                <!-- Thai Tea -->
+                <path d="M22 26H42L39 48C38.7 50.5 36.8 52 32 52C27.2 52 25.3 50.5 25 48L22 26Z"
+                      fill="#F57C00"/>
+
+                <!-- Cheese Foam -->
+                <path d="M22 24C24 22 26 25 28 24C30 23 31 26 33 24C35 22 37 25 39 24C41 23 42 25 42 25V30H22V24Z"
+                      fill="#FFF8E1"/>
+
+                <!-- Boba -->
+                <circle cx="28" cy="42" r="2" fill="#4E342E"/>
+                <circle cx="33" cy="38" r="2" fill="#4E342E"/>
+                <circle cx="36" cy="44" r="2" fill="#4E342E"/>
+            </svg>
+        </div>
+
+    <div>
+        <h1 class="text-2xl font-extrabold leading-none">
+            <span class="text-orange-600">SI</span>
+            <span class="text-amber-900">PROMIN</span>
+        </h1>
+        <p class="text-[11px] font-semibold tracking-widest text-orange-500 uppercase">
+            THAITEA CHEESY
+        </p>
+    </div>
+  </div>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center space-x-8 font-medium text-stone-600">
+          <a href="#beranda" class="hover:text-orange-600 transition-all-300 flex items-center gap-1.5"><i data-lucide="home" class="w-4 h-4"></i> Beranda</a>
+          <a href="#outlet" class="hover:text-orange-600 transition-all-300 flex items-center gap-1.5"><i data-lucide="map-pin" class="w-4 h-4"></i> Outlet</a>
+          <a href="#menu" class="hover:text-orange-600 transition-all-300 flex items-center gap-1.5"><i data-lucide="grid" class="w-4 h-4"></i> Galeri Menu</a>
+          <a href="#proses" class="hover:text-orange-600 transition-all-300 flex items-center gap-1.5"><i data-lucide="play" class="w-4 h-4"></i> Video Teaser</a>
+          <a href="#komposisi" class="hover:text-orange-600 transition-all-300 flex items-center gap-1.5"><i data-lucide="layers" class="w-4 h-4"></i> Komposisi</a>
+          <a href="#simulasi" class="hover:text-orange-600 transition-all-300 flex items-center gap-1.5"><i data-lucide="calculator" class="w-4 h-4"></i> Order Simulator</a>
+        </div>
+
+        <!-- CTA Button -->
+        <div class="hidden md:block">
+          <a href="#simulasi" class="cheese-gradient text-white font-semibold px-5  py-2.5 rounded-full hover:shadow-lg hover:shadow-orange-500/30 transition-all-300 text-sm flex items-center gap-2">
+            <i data-lucide="shopping-bag" class="w-4 h-4"></i> Pesan Sekarang
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+          <button id="mobile-menu-btn" class="p-2 rounded-lg text-amber-950 hover:bg-orange-50 focus:outline-none">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white/95 border-b border-orange-100 px-4 py-4 space-y-3">
+      <a href="#beranda" class="block px-4 py-2 rounded-lg hover:bg-orange-50 text-stone-700 font-medium">Beranda</a>
+      <a href="#outlet" class="block px-4 py-2 rounded-lg hover:bg-orange-50 text-stone-700 font-medium">Outlet</a>
+      <a href="#menu" class="block px-4 py-2 rounded-lg hover:bg-orange-50 text-stone-700 font-medium">Galeri Menu</a>
+      <a href="#proses" class="block px-4 py-2 rounded-lg hover:bg-orange-50 text-stone-700 font-medium">Video Teaser</a>
+      <a href="#komposisi" class="block px-4 py-2 rounded-lg hover:bg-orange-50 text-stone-700 font-medium">Komposisi</a>
+      <a href="#simulasi" class="block px-4 py-2 rounded-lg hover:bg-orange-50 text-stone-700 font-medium">Order Simulator</a>
+    </div>
+  </nav>
+
+  <!-- BANNER PENGUMUMAN / PROMO DINAMIS  -->
+  <section id="beranda" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-12">
+    <!-- Container Banner Utama dengan latar belakang abstrak/ilustrasi berformat tinggi & Overlay Teks murni CSS -->
+    <div class="relative rounded-3xl overflow-hidden shadow-xl border border-orange-100 bg-stone-900 text-white min-h-[420px] md:min-h-[480px] flex items-center">
+      <!-- Background Foto Outlet -->
+       <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('img/outlet.png');"></div>
+      
+      <!-- Overlay -->
+      <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
+
+      <!-- Dekorasi Blur-->
+      <div class="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-orange-500/20 blur-3xl"></div>
+      <div class="absolute -bottom-24 -right-24 w-96 h-96 rounded-full bg-yellow-500/20 blur-3xl"></div>
+
+      <!-- Teks Overlay Murni CSS  -->
+      <div class="relative z-10 max-w-2xl px-6 sm:px-12 md:py-16 space-y-6">
+        <span class="inline-flex items-center gap-1.5 py-1 px-6 rounded-full text-sm font-bold bg-orange-500 text-white tracking-wider uppercase shadow-md shadow-orange-500/30">
+          <svg width="28" height="28" viewBox="0 0 68 68" fill="none">
+                <!-- Sedotan -->
+                <path d="M38 8L44 2" stroke="white" stroke-width="4" stroke-linecap="round"/>
+
+                <!-- Tutup Cup -->
+                <ellipse cx="32" cy="18" rx="14" ry="4" fill="#FFE082"/>
+
+                <!-- Cup -->
+                <path d="M20 18H44L40 50C39.5 54 36.5 56 32 56C27.5 56 24.5 54 24 50L20 18Z"
+                      fill="white"/>
+
+                <!-- Thai Tea -->
+                <path d="M22 26H42L39 48C38.7 50.5 36.8 52 32 52C27.2 52 25.3 50.5 25 48L22 26Z"
+                      fill="#F57C00"/>
+
+                <!-- Cheese Foam -->
+                <path d="M22 24C24 22 26 25 28 24C30 23 31 26 33 24C35 22 37 25 39 24C41 23 42 25 42 25V30H22V24Z"
+                      fill="#FFF8E1"/>
+
+                <!-- Boba -->
+                <circle cx="28" cy="42" r="2" fill="#4E342E"/>
+                <circle cx="33" cy="38" r="2" fill="#4E342E"/>
+                <circle cx="36" cy="44" r="2" fill="#4E342E"/>
+            </svg>
+          Welcome to
+        </span>
+
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-none text-white">
+          Thai Tea Cheesy
+          <br>
+          <span class="text-2xl sm:text-3xl md:text-4xl font-semibold text-orange-100">
+            Segar, Nikmat, dan Berkualitas
+          </span>
+        </h1>
+
+        <p class="text-stone-300 text-sm sm:text-base md:text-lg max-w-lg leading-relaxed">
+          Nikmati berbagai varian minuman favorit dengan cita rasa premium yang dibuat dari bahan pilihan dan disajikan langsung di outlet kami.
+        </p>
+        <div class="flex flex-wrap gap-4 pt-2">
+          <a href="#simulasi" class="cheese-gradient hover:scale-105 transition-all-300 text-white font-bold px-6 py-3.5 rounded-xl shadow-lg shadow-orange-500/40 text-sm flex items-center gap-2">
+            Pesan Sekarang <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+          <a href="#menu" class="bg-white/10 hover:bg-white/20 transition-all-300 text-white font-semibold px-6 py-3.5 rounded-xl border border-white/20 text-sm backdrop-blur-sm">
+            Lihat Varian Menu
+          </a>
+        </div>
+      </div>
+
+      <!-- Floating Badge -->
+      <div class="absolute top-6 right-6 bg-yellow-400 text-amber-950 font-extrabold rounded-full w-24 h-24 flex flex-col items-center justify-center rotate-12 shadow-lg border-2 border-white text-center">
+        <span class="text-[15px] uppercase tracking-wider">100%</span>
+        <span class="text-[15px] -my-1">PREMIUM</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOKASI OUTLET  -->
+  <section id="outlet" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="bg-white rounded-3xl border border-orange-100/70 p-6 sm:p-8 shadow-md">
+      <span class="text-orange-600 font-bold text-xs uppercase tracking-widest flex items-center gap-1.5 mb-2">
+        <i data-lucide="navigation" class="w-4 h-4 animate-bounce"></i> Kunjungi Outlet Kami
+      </span>
+      <h3 class="text-2xl sm:text-3xl font-extrabold text-amber-950 mb-6">Lokasi Gerai Resmi</h3>
+
+      <!-- Tampilan Detail Outlet Terpusat -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        
+        <!-- Info Outlet (Kiri) -->
+        <div class="lg:col-span-5 bg-amber-50/40 p-6 sm:p-8 rounded-2xl border border-orange-100/60 flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-center mb-4">
+              <span class="bg-orange-600 text-white text-xs font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider shadow-sm">
+                Pusat Outlet
+              </span>
+              
+              <span id="status-toko" class="flex items-center text-xs font-bold gap-1 px-2.5 py-1.5 rounded-lg border">
+                <span id="titik-status" class="w-2 h-2 rounded-full"></span> 
+                <span id="teks-status"></span>
+              </span>
+            </div>
+            
+            <h4 class="font-extrabold text-2xl text-amber-950 mb-3">Thaitea Cheessy</h4>
+            <p class="text-sm text-stone-600 leading-relaxed mb-6">
+              Jl. Sei Mencirim, Desa Suka Maju, Kec. Sunggal, Kab. Deli Serdang, Sumatera Utara 20351
+            </p>
+
+            <div class="space-y-3.5 py-4 border-t border-b border-orange-100/60 mb-6">
+              <div class="flex items-center gap-3 text-sm text-stone-700">
+                <i data-lucide="clock" class="w-5 h-5 text-orange-600 shrink-0"></i>
+                <div>
+                  <span class="block font-semibold">Jam Operasional:</span>
+                  <span class="text-xs text-stone-500">Setiap Hari — 11:00 - 21:30 WIB</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-3 text-sm text-stone-700">
+                <i data-lucide="phone" class="w-5 h-5 text-orange-600 shrink-0"></i>
+                <div>
+                  <span class="block font-semibold">Telepon / WhatsApp:</span>
+                  <span class="text-xs text-stone-500">+62 838-4219-2918</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <a href="https://maps.app.goo.gl/KvH6dkSEwGcRkMZ79" target="_blank" class="w-full cheese-gradient text-white py-4 rounded-xl text-sm font-bold transition-all-300 flex items-center justify-center gap-2 shadow-md shadow-orange-500/20">
+            <i data-lucide="map" class="w-4 h-4"></i> Petunjuk Rute Google Maps
+          </a>
+        </div>
+
+        <!-- Visual / Mockup Peta Lokasi (Kanan) -->
+        <div class="lg:col-span-7 bg-amber-50 rounded-2xl border border-orange-100/60 overflow-hidden relative min-h-[300px] flex items-center justify-center">
+          <!-- Background Image Mockup Map (Visual Estetik) -->
+          <div class="absolute inset-0 bg-cover bg-center filter grayscale-[20%] opacity-80" style="background-image: url('img/map.jpg');"></div>
+          
+          <!-- Mockup Overlay Elemen Peta -->
+          <div class="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent"></div>
+          
+          <!-- Floating Pin Marker -->
+          <div class="relative z-10 flex flex-col items-center">
+            <div class="bg-amber-950 text-white font-extrabold text-xs px-3.5 py-2 rounded-full shadow-lg border border-orange-200/50 flex items-center gap-1.5 mb-2 animate-bounce">
+              <svg width="28" height="28" viewBox="0 0 68 68" fill="none">
+                <!-- Sedotan -->
+                <path d="M38 8L44 2" stroke="white" stroke-width="4" stroke-linecap="round"/>
+
+                <!-- Tutup Cup -->
+                <ellipse cx="32" cy="18" rx="14" ry="4" fill="#FFE082"/>
+
+                <!-- Cup -->
+                <path d="M20 18H44L40 50C39.5 54 36.5 56 32 56C27.5 56 24.5 54 24 50L20 18Z"
+                      fill="white"/>
+
+                <!-- Thai Tea -->
+                <path d="M22 26H42L39 48C38.7 50.5 36.8 52 32 52C27.2 52 25.3 50.5 25 48L22 26Z"
+                      fill="#F57C00"/>
+
+                <!-- Cheese Foam -->
+                <path d="M22 24C24 22 26 25 28 24C30 23 31 26 33 24C35 22 37 25 39 24C41 23 42 25 42 25V30H22V24Z"
+                      fill="#FFF8E1"/>
+
+                <!-- Boba -->
+                <circle cx="28" cy="42" r="2" fill="#4E342E"/>
+                <circle cx="33" cy="38" r="2" fill="#4E342E"/>
+                <circle cx="36" cy="44" r="2" fill="#4E342E"/>
+            </svg>
+          </i> THAITEA CHEESY DISINI!
+            </div>
+            <div class="w-12 h-12 rounded-full cheese-gradient border-4 border-white flex items-center justify-center shadow-xl shadow-orange-500/40">
+              <i data-lucide="map-pin" class="w-6 h-6 text-white"></i> 
+            </div>
+            <div class="w-6 h-1.5 bg-black/30 rounded-full blur-sm mt-0.5"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERI MENU UTAMA -->
+  <section id="menu" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <span class="text-orange-600 font-bold text-sm tracking-wider uppercase block mb-2">Varian Sensasional</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-amber-950">
+        Galeri Produk Unggulan Kami
+      </h2>
+      <p class="text-stone-500 mt-3 text-sm sm:text-base">
+        Galeri produk Thai Tea Cheesy menghadirkan beragam pilihan minuman berkualitas dengan rasa yang nikmat, harga terjangkau, dan bahan pilihan terbaik. <code class="bg-orange-50 text-orange-600 px-1.5 py-0.5 rounded font-mono text-sm font-semibold"></code> 
+      </p>
+
+      <!-- Filter Kategori Kustom -->
+      <div class="flex justify-center gap-3 mt-8">
+        <button onclick="filterMenu('semua')" class="menu-filter-btn px-5 py-2 rounded-full font-semibold text-sm bg-orange-600 text-white shadow-md shadow-orange-600/10 transition-all-300">
+          SEMUA
+        </button>
+        <button onclick="filterMenu('cheese')" class="menu-filter-btn px-5 py-2 rounded-full font-semibold text-sm bg-white border border-orange-100 hover:bg-orange-50 text-stone-600 transition-all-300">
+          PREMIUM
+        </button>
+        <button onclick="filterMenu('original')" class="menu-filter-btn px-5 py-2 rounded-full font-semibold text-sm bg-white border border-orange-100 hover:bg-orange-50 text-stone-600 transition-all-300">
+          ORIGINAL
+        </button>
+      </div>
+    </div>
+
+    <!-- Grid Menu Utama -->
+    <div id="menu-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Menu Item 1 -->
+      <div class="menu-item bg-white rounded-3xl overflow-hidden border border-orange-100 shadow-sm hover:shadow-xl transition-all-300 hover:-translate-y-1.5" data-category="cheese">
+        <div class="relative h-80 bg-amber-100 overflow-hidden group">
+          <!-- Ilustrasi Menu -->
+          <img src="img/thaiteacheese.webp" 
+               alt="Thai Tea Cheesy" 
+               loading="lazy"
+               class="w-full h-full object-cover group-hover:scale-105 transition-all-300">
+          <span class="absolute top-4 right-4 bg-orange-600 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md uppercase">Best Seller</span>
+        </div>
+        <div class="p-6">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-amber-950">Thai Tea Cheesy</h3>
+            <span class="text-lg font-extrabold text-orange-600">Rp 12.000</span>
+          </div>
+          <p class="text-stone-500 text-sm leading-relaxed mb-6">
+            Teh merah Thailand premium dipadukan dengan krim susu kental manis, lalu ditaburi foam cream cheese melimpah di atasnya.
+          </p>
+        </div>
+      </div>
+
+      <!-- Menu Item 2 -->
+      <div class="menu-item bg-white rounded-3xl overflow-hidden border border-orange-100 shadow-sm hover:shadow-xl transition-all-300 hover:-translate-y-1.5" data-category="cheese">
+        <div class="relative h-80 bg-amber-100 overflow-hidden group">
+          <img src="img/matchacheese.webp" 
+               alt="Matcha Cheesy" 
+               loading="lazy"
+               class="w-full h-full object-cover group-hover:scale-105 transition-all-300">
+          <span class="absolute top-4 right-4 bg-orange-600 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md uppercase">Best Seller</span>
+        </div>
+        <div class="p-6">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-amber-950">Matcha Cheesy</h3>
+            <span class="text-lg font-extrabold text-orange-600">Rp 16.000</span>
+          </div>
+          <p class="text-stone-500 text-sm leading-relaxed mb-6">
+            Teh hijau murni khas Uji, Jepang yang diseduh sempurna, menyatu harmoni dengan gurihnya cream cheese impor pilihan.
+          </p>
+        </div>
+      </div>
+
+      <!-- Menu Item 3 -->
+      <div class="menu-item bg-white rounded-3xl overflow-hidden border border-orange-100 shadow-sm hover:shadow-xl transition-all-300 hover:-translate-y-1.5" data-category="cheese">
+        <div class="relative h-80 bg-amber-100 overflow-hidden group">
+          <img src="img/coklatcheese.webp" 
+               alt="chocolate Cheese" 
+               loading="lazy"
+               class="w-full h-full object-cover group-hover:scale-105 transition-all-300">
+               <span class="absolute top-4 right-4 bg-green-600 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md uppercase">Premium</span>
+        </div>
+        <div class="p-6">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-amber-950">Chocolate Cheesy</h3>
+            <span class="text-lg font-extrabold text-orange-600">Rp 15.000</span>
+          </div>
+          <p class="text-stone-500 text-sm leading-relaxed mb-6">
+            Perpaduan cokelatnya yang manis mantap, makin seru ketemu gurihnya keju cair yang melumuri dinding cupnya. Pas banget buat nemenin harimu!"
+          </p>
+        </div>
+      </div>
+
+      
+      <!-- Menu Item 4 -->
+      <div class="menu-item bg-white rounded-3xl overflow-hidden border border-orange-100 shadow-sm hover:shadow-xl transition-all-300 hover:-translate-y-1.5" data-category="cheese">
+        <div class="relative h-80 bg-amber-100 overflow-hidden group">
+          <img src="img/tarocheese.webp" 
+               alt="Taro Cheese" 
+               loading="lazy"
+               class="w-full h-full object-cover group-hover:scale-105 transition-all-300">
+               <span class="absolute top-4 right-4 bg-green-600 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md uppercase">Premium</span>
+        </div>
+        <div class="p-6">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-amber-950">Taro Cheesy</h3>
+            <span class="text-lg font-extrabold text-orange-600">Rp 15.000</span>
+          </div>
+          <p class="text-stone-500 text-sm leading-relaxed mb-6">
+            Buat kamu pecinta taro, menu yang satu ini juara banget. Perpaduan taro yang manis gurih ketemu keju cair yang melimpah, bener-bener perpaduan yang pas.
+          </p>
+        </div>
+      </div>
+
+       <!-- Menu Item 5 -->
+      <div class="menu-item bg-white rounded-3xl overflow-hidden border border-orange-100 shadow-sm hover:shadow-xl transition-all-300 hover:-translate-y-1.5" data-category="cheese">
+        <div class="relative h-80 bg-amber-100 overflow-hidden group">
+          <img src="img/redvelvetcheese.webp" 
+               alt="Redvelvet Cheese" 
+               loading="lazy"
+               class="w-full h-full object-cover group-hover:scale-105 transition-all-300">
+               <span class="absolute top-4 right-4 bg-green-600 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md uppercase">Premium</span>
+        </div>
+        <div class="p-6">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-amber-950">Red Velvet Cheesy</h3>
+            <span class="text-lg font-extrabold text-orange-600">Rp 15.000</span>
+          </div>
+          <p class="text-stone-500 text-sm leading-relaxed mb-6">
+            Sensasi Red Velvet yang manis khas, makin spesial ketemu gurihnya keju cair yang membalut dinding cup. Perpaduan rasa yang unik dan bikin nagih!
+          </p>
+        </div>
+      </div>
+
+      <!-- Menu Item 6 -->
+      <div class="menu-item bg-white rounded-3xl overflow-hidden border border-orange-100 shadow-sm hover:shadow-xl transition-all-300 hover:-translate-y-1.5" data-category="original">
+        <div class="relative h-80 bg-amber-100 overflow-hidden group">
+          <img src="img/thaiteaori.webp" 
+               alt="Thai Tea Original" 
+               loading="lazy"
+               class="w-full h-full object-cover group-hover:scale-105 transition-all-300">
+               <span class="absolute top-4 right-4 bg-yellow-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md uppercase">Original</span>
+        </div>
+        <div class="p-6">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-amber-950">Thaitea Original</h3>
+            <span class="text-lg font-extrabold text-orange-600">Rp 8.000</span>
+          </div>
+          <p class="text-stone-500 text-sm leading-relaxed mb-6">
+            Pilihan klasik bagi para pecinta rasa otentik Thai Tea asli tanpa menggunakan cream cheese, manis menyegarkan dahaga.
+          </p>
+        </div>
+      </div>
+
+      <!-- Menu Item 7 -->
+      <div class="menu-item bg-white rounded-3xl overflow-hidden border border-orange-100 shadow-sm hover:shadow-xl transition-all-300 hover:-translate-y-1.5" data-category="original">
+        <div class="relative h-80 bg-amber-100 overflow-hidden group">
+          <!-- Placeholder visual minimalis elegan -->
+          <img src="img/matchaori.webp" 
+               alt="Matcha Original" 
+               loading="lazy"
+               class="w-full h-full object-cover group-hover:scale-105 transition-all-300">
+               <span class="absolute top-4 right-4 bg-yellow-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md uppercase">Original</span>
+        </div>
+        <div class="p-6">
+        </div>
+        <div class="p-6">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-amber-950">Matcha Original</h3>
+            <span class="text-lg font-extrabold text-orange-600">Rp 12.000</span>
+          </div>
+          <p class="text-stone-500 text-sm leading-relaxed mb-6">
+            Rasa matcha yang khas dipadukan dengan susu yang lembut, menghasilkan minuman yang segar dan nikmat dari awal hingga akhir.
+          </p>
+        </div>
+      </div>
+
+      <!-- Menu Item 8 -->
+      <div class="menu-item bg-white rounded-3xl overflow-hidden border border-orange-100 shadow-sm hover:shadow-xl transition-all-300 hover:-translate-y-1.5" data-category="original">
+        <div class="relative h-80 bg-amber-100 overflow-hidden group">
+          <!-- Placeholder visual minimalis elegan -->
+          <img src="img/coklatori.webp" 
+               alt="Matcha Original" 
+               loading="lazy"
+               class="w-full h-full object-cover group-hover:scale-105 transition-all-300">
+               <span class="absolute top-4 right-4 bg-yellow-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md uppercase">Original</span>
+        </div>
+        <div class="p-6">
+        </div>
+        <div class="p-6">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-amber-950">Chocolate Original</h3>
+            <span class="text-lg font-extrabold text-orange-600">Rp 10.000</span>
+          </div>
+          <p class="text-stone-500 text-sm leading-relaxed mb-6">
+            Cokelat pilihan dengan rasa yang pas, memberikan sensasi manis yang lembut dan cocok dinikmati saat cuaca panas maupun santai.
+          </p>
+        </div>
+      </div>
+
+      <!-- Menu Item 9 -->
+      <div class="menu-item bg-white rounded-3xl overflow-hidden border border-orange-100 shadow-sm hover:shadow-xl transition-all-300 hover:-translate-y-1.5" data-category="original">
+        <div class="relative h-80 bg-amber-100 overflow-hidden group">
+          <!-- Placeholder visual minimalis elegan -->
+          <img src="img/taroori.webp" 
+               alt="Matcha Original" 
+               loading="lazy"
+               class="w-full h-full object-cover group-hover:scale-105 transition-all-300">
+               <span class="absolute top-4 right-4 bg-yellow-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md uppercase">Original</span>
+        </div>
+        <div class="p-6">
+        </div>
+        <div class="p-6">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-amber-950">Taro Original</h3>
+            <span class="text-lg font-extrabold text-orange-600">Rp 10.000</span>
+          </div>
+          <p class="text-stone-500 text-sm leading-relaxed mb-6">
+            Perpaduan rasa taro yang manis dan lembut menghadirkan minuman yang menyegarkan dan pas untuk menemani aktivitas sehari-hari.
+          </p>
+        </div>
+      </div>
+
+      <!-- Menu Item 10 -->
+      <div class="menu-item bg-white rounded-3xl overflow-hidden border border-orange-100 shadow-sm hover:shadow-xl transition-all-300 hover:-translate-y-1.5" data-category="original">
+        <div class="relative h-80 bg-amber-100 overflow-hidden group">
+          <!-- Placeholder visual minimalis elegan -->
+          <img src="img/redvelvetori.webp" 
+               alt="Matcha Original" 
+               loading="lazy"
+               class="w-full h-full object-cover group-hover:scale-105 transition-all-300">
+               <span class="absolute top-4 right-4 bg-yellow-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md uppercase">Original</span>
+        </div>
+        <div class="p-6">
+        </div>
+        <div class="p-6">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-amber-950">Red Velvet Original</h3>
+            <span class="text-lg font-extrabold text-orange-600">Rp 10.000</span>
+          </div>
+          <p class="text-stone-500 text-sm leading-relaxed mb-6">
+            Nikmati rasa red velvet yang lembut dengan sentuhan manis yang pas, memberikan pengalaman minum yang ringan dan menyegarkan.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO TEASER & REVIEW  -->
+  <section id="proses" class="bg-stone-900 text-white py-20 relative overflow-hidden">
+    <div class="absolute inset-0 bg-orange-600/5 mix-blend-color"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Teks Kiri -->
+        <div class="lg:col-span-5 space-y-6">
+          <span class="text-orange-500 font-extrabold text-sm tracking-widest uppercase flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-orange-500 animate-ping"></span> Behind The Scenes
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold leading-tight">
+            Bagaimana Kami Menyajikan Kenikmatan Cheesy?
+          </h2>
+          <p class="text-stone-400 leading-relaxed text-sm sm:text-base">
+            Yuk, lihat proses pembuatan Thai Tea Cheesy kami. Dibuat dari bahan pilihan, diseduh segar, dan disiapkan dengan menjaga kebersihan agar setiap gelas tetap nikmat.
+          </p>
+          
+          <div class="space-y-4">
+            <div class="flex gap-4">
+              <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center shrink-0 text-orange-500">
+                <i data-lucide="sparkles" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h4 class="font-bold">Foam Cream Cheese </h4>
+                <p class="text-sm text-stone-400">Diracik hingga lembut, kental, dan memberikan sensasi creamy di setiap tegukan.</p>
+              </div>
+            </div>
+            <div class="flex gap-4">
+              <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center shrink-0 text-orange-500">
+                <i data-lucide="flame" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h4 class="font-bold">Teh Seduh Segar</h4>
+                <p class="text-sm text-stone-400">Menggunakan teh pilihan yang diseduh setiap hari untuk menjaga aroma dan rasa tetap autentik.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Player Video Kanan  -->
+        <div class="lg:col-span-7">
+          <div class="relative bg-stone-950 aspect-video rounded-3xl overflow-hidden border-4 border-stone-800 shadow-2xl group">
+            
+            <!-- Simulasi Video Sederhana Interaktif -->
+            <div id="video-overlay" class="absolute inset-0 bg-cover bg-center flex flex-col justify-between p-6 z-20 transition-all-300" style="background-image: url('img/thaiteacheese.webp');">
+              <div class="absolute inset-0 bg-amber-950/40"></div>
+              
+              <div class="relative z-10 flex justify-between items-start">
+                <span class="bg-black/60 px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1 backdrop-blur-md">
+                  <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span> PREVIEW
+                </span>
+                <span class="bg-black/60 px-2.5 py-1 rounded-full text-xs font-semibold backdrop-blur-md">01:45</span>
+              </div>
+
+              <!-- Play Button -->
+              <div class="relative z-10 self-center">
+                <button onclick="putarVideo()" class="w-20 h-20 rounded-full bg-orange-600 hover:bg-orange-500 text-white flex items-center justify-center shadow-lg shadow-orange-600/50 hover:scale-110 transition-all-300">
+                  <i data-lucide="play" class="w-10 h-10 fill-current ml-1"></i>
+                </button>
+              </div>
+
+              <div class="relative z-10">
+                <p class="text-lg font-bold">Rahasia Keju Lumer Melimpah</p>
+                <p class="text-xs text-stone-300">Saksikan demo pembuatan segelas kebahagiaan Anda</p>
+              </div>
+            </div>
+
+            <!-- HTML5 Video element -->
+            <video id="teaser-video" class="w-full h-full object-cover" loop muted playsinline>
+              <source src="video/proses.mp4" type="video/mp4">
+              Browser Anda tidak mendukung tag video. Silakan upgrade.
+            </video>
+
+            <!-- Video Controls Custom -->
+            <div id="video-controls" class="absolute bottom-4 left-4 right-4 z-20 flex justify-between items-center bg-black/75 px-4 py-3.5 rounded-2xl hidden backdrop-blur-sm">
+              <button onclick="jedaVideo()" class="text-white hover:text-orange-500">
+                <i data-lucide="pause" class="w-5 h-5"></i>
+              </button>
+              <span class="text-xs text-stone-300">Menampilkan Video Teaser Komposisi Creamy...</span>
+              <button onclick="matikanSuara()" class="text-white hover:text-orange-500">
+                <i data-lucide="volume-2" id="sound-icon" class="w-5 h-5"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PETA MENU & KOMPOSISI BAHAN -->
+  <section id="komposisi" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <span class="text-orange-600 font-bold text-sm tracking-wider uppercase block mb-2">Formulasi Terbaik</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-amber-950">Infografis & Alur Struktur Rasa</h2>
+      <p class="text-stone-500 mt-3 text-sm sm:text-base">
+        Visualisasi grafis struktur penataan bahan baku premium dalam satu cup sajian.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="bg-white p-6 sm:p-8 rounded-3xl border border-orange-100 shadow-md flex justify-center items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" class="w-full max-w-[340px] h-auto drop-shadow-xl">
+          <!-- Latar Belakang Canvas -->
+          <rect width="400" height="500" rx="20" fill="#FFFDF9" />
+          
+          <!-- LAPISAN 5 (PALING ATAS): CHEESE (PARUTAN KEJU KRAFT) -->
+          <!-- Background atas cup -->
+          <path d="M 95 100 Q 200 85 305 100 L 302 135 Q 200 120 98 135 Z" fill="#FFEAA7" opacity="0.9" />
+          <!-- Helai-helai keju parut emas di atas cream cheese -->
+          <path d="M 120 115 Q 140 100 150 120 M 160 105 Q 180 115 190 100 M 210 110 Q 230 100 240 115 M 250 105 Q 270 120 280 110 M 135 125 Q 155 115 170 125 M 185 120 Q 205 110 220 125 M 230 120 Q 250 115 265 125 M 150 110 Q 170 100 180 115 M 200 105 Q 220 115 230 105" 
+                stroke="#FF9F43" stroke-width="4.5" stroke-linecap="round" fill="none" />
+          <text x="200" y="118" fill="#8B5A2B" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="11" text-anchor="middle">5. PARUTAN KEJU (SHREDDED CHEESE)</text>
+          
+          <!-- LAPISAN 4: CREAM CHEESE (CREAM CHEESE FOAM LEMBUT) -->
+          <path d="M 98 135 Q 200 120 302 135 L 296 190 Q 200 175 104 190 Z" fill="#FFF8E7" />
+          <!-- Efek tekstur cream -->
+          <path d="M 115 155 Q 130 145 150 155 T 190 155 T 230 155 T 270 155" stroke="#FFE5A3" stroke-width="2.5" stroke-linecap="round" fill="none" opacity="0.6"/>
+          <text x="200" y="166" fill="#A0522D" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="12" text-anchor="middle">4. PREMIUM CREAM CHEESE FOAM</text>
+          
+          <!-- LAPISAN 3: ES BATU (ICE CUBES) -->
+          <path d="M 104 190 Q 200 175 296 190 L 290 260 Q 200 245 110 260 Z" fill="#EBF7FC" />
+          <!-- Es Batu Kristal (Kotak transparan mengkilap) -->
+          <!-- Es Batu 1 -->
+          <rect x="130" y="200" width="30" height="30" rx="4" fill="#FFFFFF" stroke="#B2E2F7" stroke-width="2" transform="rotate(12 145 215)" opacity="0.85"/>
+          <line x1="133" y1="205" x2="153" y2="205" stroke="#E0F2FE" stroke-width="2" transform="rotate(12 145 215)"/>
+          <!-- Es Batu 2 -->
+          <rect x="230" y="205" width="28" height="28" rx="4" fill="#FFFFFF" stroke="#B2E2F7" stroke-width="2" transform="rotate(-15 244 219)" opacity="0.85"/>
+          <line x1="233" y1="210" x2="251" y2="210" stroke="#E0F2FE" stroke-width="2" transform="rotate(-15 244 219)"/>
+          <!-- Es Batu 3 -->
+          <rect x="180" y="215" width="25" height="25" rx="4" fill="#FFFFFF" stroke="#B2E2F7" stroke-width="2" transform="rotate(45 192 227)" opacity="0.7"/>
+          <text x="200" y="248" fill="#1D4ED8" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="12" text-anchor="middle">3. ES BATU KRISTAL MURNI</text>
+
+          <!-- LAPISAN 2: THAI TEA (SEDIDIKAN TEH ORANYE KHAS) -->
+          <path d="M 110 260 Q 200 245 290 260 L 275 410 Q 200 395 125 410 Z" fill="#F48A3F" />
+          <!-- Efek gradasi susu cair teh -->
+          <path d="M 120 310 Q 160 290 200 310 T 280 310" stroke="#FFAD75" stroke-width="3" fill="none" opacity="0.4"/>
+          <path d="M 123 350 Q 160 335 200 350 T 277 350" stroke="#FFAD75" stroke-width="2" fill="none" opacity="0.3"/>
+          <text x="200" y="325" fill="#FFF" font-family="'Plus Jakarta Sans', sans-serif" font-weight="850" font-size="15" text-anchor="middle">2. AUTHENTIC THAI TEA</text>
+          <text x="200" y="345" fill="#FFF3EB" font-family="'Plus Jakarta Sans', sans-serif" font-weight="500" font-size="10" text-anchor="middle">Seduhan Daun Teh Chiang Rai</text>
+
+          <!-- LAPISAN 1 (PALING BAWAH): BOBA PEARL (BUTIRAN BOBA MANIS) -->
+          <path d="M 125 410 Q 200 395 275 410 L 270 460 Q 200 450 130 460 Z" fill="#3D2513" />
+          <!-- Bulatan Boba Kenyal Berwarna Hitam Kecokelatan -->
+          <circle cx="150" cy="425" r="9" fill="#1E110A" stroke="#54331B" stroke-width="1.5" />
+          <circle cx="168" cy="432" r="10" fill="#100905" stroke="#54331B" stroke-width="1.5" />
+          <circle cx="188" cy="423" r="9" fill="#1E110A" stroke="#54331B" stroke-width="1.5" />
+          <circle cx="208" cy="435" r="10" fill="#100905" stroke="#54331B" stroke-width="1.5" />
+          <circle cx="228" cy="426" r="9" fill="#1E110A" stroke="#54331B" stroke-width="1.5" />
+          <circle cx="248" cy="433" r="9.5" fill="#100905" stroke="#54331B" stroke-width="1.5" />
+          <!-- Baris Boba atas -->
+          <circle cx="140" cy="442" r="9.5" fill="#100905" stroke="#54331B" stroke-width="1.5" />
+          <circle cx="160" cy="446" r="9" fill="#1E110A" stroke="#54331B" stroke-width="1.5" />
+          <circle cx="180" cy="445" r="10" fill="#100905" stroke="#54331B" stroke-width="1.5" />
+          <circle cx="200" cy="448" r="9" fill="#1E110A" stroke="#54331B" stroke-width="1.5" />
+          <circle cx="220" cy="446" r="9.5" fill="#100905" stroke="#54331B" stroke-width="1.5" />
+          <circle cx="240" cy="447" r="9" fill="#1E110A" stroke="#54331B" stroke-width="1.5" />
+          <circle cx="260" cy="441" r="9" fill="#100905" stroke="#54331B" stroke-width="1.5" />
+          <text x="200" y="482" fill="#FDBA74" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="11" text-anchor="middle">1. BOBA PEARL KENYAL (DASAR)</text>
+
+          <!-- Garis Outline Cup Gelas Transparan -->
+          <path d="M 95 100 L 130 460 C 133 480, 267 480, 270 460 L 305 100" fill="none" stroke="#E6A15C" stroke-width="6" stroke-linecap="round" opacity="0.9" />
+          <!-- Bibir Gelas Atas -->
+          <ellipse cx="200" cy="100" rx="108" ry="12" fill="none" stroke="#E6A15C" stroke-width="6" opacity="0.9" />
+        </svg>
+      </div>
+
+      <!-- Detail Penjelasan Fitur 5 Lapisan Kustom -->
+      <div class="space-y-6">
+        <h3 class="text-2xl font-bold text-amber-950">Susunan Golden Formula 5 Lapisan</h3>
+        <p class="text-stone-600 leading-relaxed text-sm sm:text-base">
+          Setiap cup diracik menggunakan struktur presisi dari bawah hingga atas demi menghasilkan cita rasa manis-teh yang kuat berpadu dengan gurih asin keju yang meletup sempurna.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="p-5 rounded-2xl bg-yellow-50 border border-yellow-100">
+            <h5 class="font-bold text-amber-900 text-sm uppercase tracking-wider mb-2">5. Keju Parut Kraft</h5>
+            <p class="text-xs text-stone-600">Lapisan paling atas berupa parutan keju kering melimpah yang memberikan sensasi tekstur renyah dan gurih alami.</p>
+          </div>
+          <div class="p-5 rounded-2xl bg-orange-50 border border-orange-100">
+            <h5 class="font-bold text-orange-800 text-sm uppercase tracking-wider mb-2">4. Cream Cheese Foam</h5>
+            <p class="text-xs text-stone-600">Krim keju tebal, lembut, dan creamy yang dimixer khusus agar lumer di mulut sejak sedotan pertama.</p>
+          </div>
+          <div class="p-5 rounded-2xl bg-blue-50/50 border border-blue-100">
+            <h5 class="font-bold text-blue-800 text-sm uppercase tracking-wider mb-2">3. Es Batu Kristal Murni</h5>
+            <p class="text-xs text-stone-600">Es batu higienis murni untuk mengunci suhu dingin optimal tanpa mengencerkan keaslian rasa pekat teh.</p>
+          </div>
+          <div class="p-5 rounded-2xl bg-amber-50 border border-amber-100">
+            <h5 class="font-bold text-amber-900 text-sm uppercase tracking-wider mb-2">2. Authentic Thai Tea</h5>
+            <p class="text-xs text-stone-600">Seduhan daun teh merah Thailand pilihan berkualitas tinggi yang beraroma pekat dan manis karamel.</p>
+          </div>
+          <div class="p-5 rounded-2xl bg-stone-100 border border-stone-200 col-span-1 sm:col-span-2">
+            <h5 class="font-bold text-stone-800 text-sm uppercase tracking-wider mb-1">1. Boba Pearl Kenyal (Paling Dasar)</h5>
+            <p class="text-xs text-stone-600">Boba tapioka kenyal beraroma gula aren murni di dasar cup yang melengkapi keasyikan mengunyah di setiap sedotan.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE ORDER SIMULATOR -->
+  <section id="simulasi" class="bg-orange-50/50 py-16 border-y border-orange-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-orange-600 font-bold text-sm tracking-wider uppercase block mb-2">Sistem Pemesanan Mandiri</span>
+        <h2 class="text-3xl font-extrabold text-amber-950">Kalkulator Pesanan Mandiri</h2>
+        <p class="text-stone-500 mt-2 text-sm sm:text-base">
+          Lakukan kalkulasi harga secara interaktif sebelum Anda langsung memesan ke outlet kami.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <!-- Form Kustomisasi (Kiri) -->
+        <div class="lg:col-span-7 bg-white p-6 sm:p-8 rounded-3xl border border-orange-100 shadow-md space-y-6">
+          <h3 class="text-xl font-bold text-amber-950 flex items-center gap-2 border-b border-orange-50 pb-4">
+            <i data-lucide="settings-2" class="w-5 h-5 text-orange-600"></i> Kustomisasi Minuman
+          </h3>
+
+          <!-- Pilihan Varian -->
+          <div>
+            <label class="block text-sm font-bold text-stone-700 mb-2">Pilih Varian Dasar:</label>
+            <select id="sim-varian" onchange="hitungTotal()" class="w-full bg-orange-50/50 border border-orange-200 rounded-xl px-4 py-3 text-stone-800 font-medium focus:outline-none focus:ring-2 focus:ring-orange-500">
+              <option value="12000">Thai Tea Cheesy (Rp 12.000)</option>
+              <option value="16000">Matcha Cheesy (Rp 16.000)</option>
+              <option value="15000">Chocolate Cheesy (Rp 15.000)</option>
+              <option value="15000">Taro Cheesy (Rp 15.000)</option>
+              <option value="15000">Red Velvet Cheesy (Rp 15.000)</option>
+              <option value="8000">Thaitea Original(Rp 8.000)</option>
+              <option value="12000">Matcha Original (Rp 12.000)</option>
+              <option value="10000">Chocolate Original (Rp 10.000)</option>
+              <option value="10000">Taro Original (Rp 10.000)</option>
+              <option value="10000">Red Velvet Original (Rp 10.000)</option>
+            </select>
+          </div>
+
+          <!-- Pilihan Topping (Checkbox) -->
+          <div>
+            <label class="block text-sm font-bold text-stone-700 mb-3">Ekstra Topping:</label>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <label class="flex items-center gap-3 p-3.5 rounded-xl border border-orange-100 hover:bg-orange-50/50 cursor-pointer transition-all-300">
+                <input type="checkbox" id="creamcheese" value="3000" onchange="hitungTotal()" class="w-4 h-4 text-orange-600 focus:ring-orange-500 border-orange-300 rounded">
+                <div>
+                  <span class="block font-semibold text-xs sm:text-sm text-stone-800">Cream Cheese</span>
+                  <span class="text-xs text-orange-600">+ Rp 3.000</span>
+                </div>
+              </label>
+              <label class="flex items-center gap-3 p-3.5 rounded-xl border border-orange-100 hover:bg-orange-50/50 cursor-pointer transition-all-300">
+                <input type="checkbox" id="cheese" value="2000" onchange="hitungTotal()" class="w-4 h-4 text-orange-600 focus:ring-orange-500 border-orange-300 rounded">
+                <div>
+                  <span class="block font-semibold text-xs sm:text-sm text-stone-800">Cheese</span>
+                  <span class="text-xs text-orange-600">+ Rp 2.000</span>
+                </div>
+              </label>
+              <label class="flex items-center gap-3 p-3.5 rounded-xl border border-orange-100 hover:bg-orange-50/50 cursor-pointer transition-all-300">
+                <input type="checkbox" id="bubble" value="2000" onchange="hitungTotal()" class="w-4 h-4 text-orange-600 focus:ring-orange-500 border-orange-300 rounded">
+                <div>
+                  <span class="block font-semibold text-xs sm:text-sm text-stone-800">Bubble</span>
+                  <span class="text-xs text-orange-600">+ Rp 2.000</span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <!-- Ukuran Gelas & Sugar Level -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-bold text-stone-700 mb-2">Ukuran Gelas:</label>
+              <select id="sim-size" onchange="hitungTotal()" class="w-full bg-orange-50/50 border border-orange-200 rounded-xl px-4 py-3 text-stone-800 font-medium focus:outline-none focus:ring-2 focus:ring-orange-500">
+                <option value="0">Regular</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-bold text-stone-700 mb-2">Tingkat Manis (Sugar Level):</label>
+              <select id="sim-sugar" class="w-full bg-orange-50/50 border border-orange-200 rounded-xl px-4 py-3 text-stone-800 font-medium focus:outline-none focus:ring-2 focus:ring-orange-500">
+                <option value="normal">Normal Sugar (100%)</option>
+                <option value="less">Less Sugar (70%)</option>
+                <option value="low">Low Sugar (30%)</option>
+                <option value="none">No Sugar Added (0%)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Metode Pembayaran -->
+          <div>
+            <label class="block text-sm font-bold text-stone-700 mb-2">
+              Metode Pembayaran:
+            </label>
+
+            <select
+              id="sim-payment"
+              onchange="hitungTotal()"
+              class="w-full bg-orange-50/50 border border-orange-200 rounded-xl px-4 py-3 text-stone-800 font-medium focus:outline-none focus:ring-2 focus:ring-orange-500">
+
+              <option value="QRIS">QRIS</option>
+              <option value="COD">Bayar di Tempat (COD)</option>
+            </select>
+          </div>
+
+          <!-- Data Pemesan -->
+          <div>
+            <label class="block text-sm font-bold text-stone-700 mb-2">
+              Nama Pemesan:
+            </label>
+            <input
+              type="text"
+              id="customer-name"
+              placeholder="Masukkan nama lengkap"
+              class="w-full bg-orange-50/50 border border-orange-200 rounded-xl px-4 py-3">
+          </div>
+
+          <div>
+            <label class="block text-sm font-bold text-stone-700 mb-2">
+              Nomor WhatsApp:
+            </label>
+            <input
+              type="tel"
+              id="customer-phone"
+              placeholder="08xxxxxxxxxx"
+              class="w-full bg-orange-50/50 border border-orange-200 rounded-xl px-4 py-3">
+          </div>
+
+          <div>
+            <label class="block text-sm font-bold text-stone-700 mb-2">
+              Alamat Pengiriman:
+            </label>
+            <textarea
+              id="customer-address"
+              rows="3"
+              placeholder="Masukkan alamat lengkap"
+              class="w-full bg-orange-50/50 border border-orange-200 rounded-xl px-4 py-3"></textarea>
+          </div>
+
+          <div>
+            <label class="block text-sm font-bold text-stone-700 mb-2">
+              Catatan Pesanan:
+            </label>
+            <textarea
+              id="customer-note"
+              rows="2"
+              placeholder="Contoh: Kurangi es"
+              class="w-full bg-orange-50/50 border border-orange-200 rounded-xl px-4 py-3"></textarea>
+          </div>
+
+          <!-- Jumlah Pembelian -->
+          <div>
+            <label class="block text-sm font-bold text-stone-700 mb-2">Jumlah Cup:</label>
+            <div class="flex items-center space-x-3 w-40">
+              <button onclick="kurangJumlah()" class="w-10 h-10 rounded-lg bg-orange-100 hover:bg-orange-200 flex items-center justify-center font-bold text-orange-700 text-lg transition-all-300">-</button>
+              <input type="number" id="sim-qty" value="1" min="1" readonly class="w-16 text-center font-bold text-amber-950 bg-stone-50 border border-orange-200 rounded-lg py-2">
+              <button onclick="tambahJumlah()" class="w-10 h-10 rounded-lg bg-orange-100 hover:bg-orange-200 flex items-center justify-center font-bold text-orange-700 text-lg transition-all-300">+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rincian Pesanan & Total (Kanan) -->
+        <div class="lg:col-span-5 space-y-6">
+          <div class="bg-amber-950 text-white p-6 sm:p-8 rounded-3xl shadow-xl relative overflow-hidden border border-amber-900">
+            <div class="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-orange-500/15 blur-2xl"></div>
+            
+            <h3 class="text-xl font-bold tracking-tight mb-6 flex items-center gap-2 border-b border-white/10 pb-4">
+              <i data-lucide="receipt" class="w-5 h-5 text-orange-400"></i> Ringkasan Belanja
+            </h3>
+
+            <div class="space-y-4">
+              <div class="flex justify-between text-sm">
+                <span class="text-stone-300">Varian Dasar:</span>
+                <span id="label-varian" class="font-semibold text-white">Original Thai Tea</span>
+              </div>
+              <div class="flex justify-between text-sm">
+                <span class="text-stone-300">Ukuran Cup:</span>
+                <span id="label-size" class="font-semibold text-white">Regular</span>
+              </div>
+              <div class="flex justify-between text-sm">
+                <span class="text-stone-300">Topping Tambahan:</span>
+                <span id="label-topping" class="font-semibold text-white text-right max-w-[180px] truncate">Tidak Ada</span>
+              </div>
+              <div class="flex justify-between text-sm">
+                <span class="text-stone-300">Sugar Level:</span>
+                <span id="label-sugar" class="font-semibold text-white">Normal (100%)</span>
+              </div>
+              <div class="flex justify-between text-sm">
+                <span class="text-stone-300">Metode Pembayaran:</span>
+                <span id="label-payment" class="font-semibold text-white">QRIS</span>
+              </div>
+              <div class="flex justify-between text-sm">
+                <span class="text-stone-300">Jumlah Pesanan:</span>
+                <span id="label-qty" class="font-semibold text-white">1 Cup</span>
+              </div>
+
+              <div class="border-t border-white/10 pt-4 mt-6 flex justify-between items-center">
+                <div>
+                  <span class="text-xs text-stone-300 uppercase block tracking-wider">Total Pembayaran</span>
+                  <span id="sim-total" class="text-3xl font-extrabold text-orange-400">Rp 15.000</span>
+                </div>
+                <div class="bg-white/10 px-3 py-1.5 rounded-lg text-xs font-semibold text-yellow-300">
+                  Belum Termasuk Ongkir
+                </div>
+              </div>
+            </div>
+
+            <div id="cart-list" class="space-y-2 mb-4">
+              <p class="text-stone-300 text-sm">Belum ada pesanan.</p>
+            </div>
+
+            <div class="bg-white border border-orange-200 rounded-2xl p-5 mt-4">
+              <h3 class="text-lg font-bold text-amber-950 mb-4">
+                Informasi Pembayaran
+              </h3>
+
+              <!-- QRIS -->
+              <div class="mb-5">
+                <h4 class="font-semibold text-stone-800 mb-2">
+                  Pembayaran QRIS
+                </h4>
+
+                <img src="img/qris.jpeg"
+                  alt="QRIS Thai Tea Cheesy"
+                  class="w-56 mx-auto rounded-xl border border-orange-200">
+
+                <p class="text-xs text-center text-stone-500 mt-2">
+                  Scan QRIS untuk melakukan pembayaran
+                </p>
+              </div>
+
+            <button onclick="tambahKeKeranjang()" class="w-full mt-4 bg-orange-500 hover:bg-orange-600 text-white py-4 rounded-2xl font-bold text-sm tracking-wide transition-all-300">
+              + Tambah ke Keranjang
+            </button>
+            
+            <!-- Pesan Sekarang via WhatsApp -->
+            <button onclick="kirimWhatsApp()" class="w-full mt-8 cheese-gradient text-white hover:shadow-lg hover:shadow-orange-500/20 py-4 rounded-2xl font-bold text-sm tracking-wide transition-all-300 flex items-center justify-center gap-2">
+              <i data-lucide="shopping-cart" class="w-5 h-5"></i> Kirim Order ke WhatsApp
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUTLET & FOOTER -->
+  <footer class="bg-stone-900 text-white pt-8 pb-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pb-6 text-center items-start">
+        
+        <!-- Kolom 1: Brand Info -->
+        <div class="space-y-3 flex flex-col items-center">
+          <div class="flex items-center space-x-3">
+            <div class="w-10 h-10 rounded-xl cheese-gradient flex items-center justify-center text-white">
+              <svg width="28" height="28" viewBox="0 0 68 68" fill="none">
+                <!-- Sedotan -->
+                <path d="M38 8L44 2" stroke="white" stroke-width="4" stroke-linecap="round"/>
+
+                <!-- Tutup Cup -->
+                <ellipse cx="32" cy="18" rx="14" ry="4" fill="#FFE082"/>
+
+                <!-- Cup -->
+                <path d="M20 18H44L40 50C39.5 54 36.5 56 32 56C27.5 56 24.5 54 24 50L20 18Z"
+                      fill="white"/>
+
+                <!-- Thai Tea -->
+                <path d="M22 26H42L39 48C38.7 50.5 36.8 52 32 52C27.2 52 25.3 50.5 25 48L22 26Z"
+                      fill="#F57C00"/>
+
+                <!-- Cheese Foam -->
+                <path d="M22 24C24 22 26 25 28 24C30 23 31 26 33 24C35 22 37 25 39 24C41 23 42 25 42 25V30H22V24Z"
+                      fill="#FFF8E1"/>
+
+                <!-- Boba -->
+                <circle cx="28" cy="42" r="2" fill="#4E342E"/>
+                <circle cx="33" cy="38" r="2" fill="#4E342E"/>
+                <circle cx="36" cy="44" r="2" fill="#4E342E"/>
+            </svg>
+            </div>
+
+            <span class="font-extrabold text-white">THAITEA CHEESY</span>
+          </div>
+
+          <p class="text-stone-400 text-sm leading-relaxed">
+            Sistem Informasi Produk Minuman (SI PROMIN) yang menyediakan informasi menu, galeri produk, video promosi, simulasi pemesanan, dan layanan pemesanan online secara interaktif.
+          </p>
+        </div>
+
+        <!-- Kolom 2: Jam Operasional -->
+        <div class="space-y-3 flex flex-col items-center">
+          <h4 class="font-bold text-orange-500 uppercase tracking-widest text-xs"><br>Layanan</h4>
+          <ul class="text-stone-400 text-sm space-y-2">
+            <li>Setiap Hari: 11:00 - 21:30 WIB</li>
+
+            <li>Fast Response Customer Service</li>
+            <li class="text-yellow-400 flex items-center justify-center gap-1">
+              <i data-lucide="map-pin" class="w-4 h-4"></i>
+              Melayani pengiriman instan online
+            </li>
+          </ul>
+        </div>
+
+        <!-- Kolom 3: Cabang Outlet -->
+        <div class="space-y-3 flex flex-col items-center">
+          <h4 class="font-bold text-orange-500 uppercase tracking-widest text-xs"><br>Lokasi Cabang</h4>
+          <ul class="text-stone-400 text-sm space-y-2">
+            <li>📍 Jl. Sei Mencirim, Desa Suka Maju</li>
+            <li>🚚 Melayani area Medan dan sekitarnya</li>
+            <li>📦 Pemesanan online melalui WhatsApp</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+       <div class="border-t border-stone-700 mt-6 pt-4 text-center">
+          <p class="text-stone-500 text-sm">
+              © 2026 Cindy & Cintya - Thai Tea Cheesy. Seluruh Hak Cipta Dilindungi Undang-Undang.
+          </p>
+      </div>
+  </footer>
+
+  <script>
+    let cart = [];
+
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Toggle Mobile Drawer Menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    function cekStatusToko() {
+    // Set jam operasional (dalam format 24 jam)
+    const jamBuka = 11.00;
+    const jamTutup = 21.30;
+    
+    // Ambil jam saat ini
+    const jamSekarang = new Date().getHours();
+    
+    // Logika pengecekan
+    const isBuka = jamSekarang >= jamBuka && jamSekarang < jamTutup;
+    
+    // Update elemen
+    const el = document.getElementById('status-toko');
+    const titik = document.getElementById('titik-status');
+    const teks = document.getElementById('teks-status');
+
+    if (isBuka) {
+      el.className = "flex items-center text-xs font-bold gap-1 px-2.5 py-1.5 rounded-lg border text-green-600 bg-green-50 border-green-200";
+      titik.className = "w-2 h-2 rounded-full bg-green-500 animate-pulse";
+      teks.innerText = "Buka Sekarang";
+    } else {
+      el.className = "flex items-center text-xs font-bold gap-1 px-2.5 py-1.5 rounded-lg border text-red-600 bg-red-50 border-red-200";
+      titik.className = "w-2 h-2 rounded-full bg-red-500";
+      teks.innerText = "Tutup";
+    }
+    }
+
+  // Jalankan fungsi saat halaman dimuat
+  cekStatusToko();
+
+    // Fitur Filter Galeri Menu (Kategori)
+    function filterMenu(kategori) {
+      const items = document.querySelectorAll('.menu-item');
+      const buttons = document.querySelectorAll('.menu-filter-btn');
+      
+      // Update Button State Styling
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-orange-600', 'text-white', 'shadow-md', 'shadow-orange-600/10');
+        btn.classList.add('bg-white', 'border', 'border-orange-100', 'text-stone-600');
+      });
+
+      // Highlight active button
+      event.target.classList.add('bg-orange-600', 'text-white', 'shadow-md', 'shadow-orange-600/10');
+      event.target.classList.remove('bg-white', 'border', 'border-orange-100', 'text-stone-600');
+
+      // Filter Logic Animation
+      items.forEach(item => {
+        const cat = item.getAttribute('data-category');
+        if (kategori === 'semua' || cat === kategori) {
+          item.style.display = 'block';
+          setTimeout(() => {
+            item.style.opacity = '1';
+            item.style.transform = 'scale(1)';
+          }, 50);
+        } else {
+          item.style.opacity = '0';
+          item.style.transform = 'scale(0.95)';
+          setTimeout(() => {
+            item.style.display = 'none';
+          }, 200);
+        }
+      });
+    }
+
+    // Interactive Video Teaser Actions (Ketentuan 2)
+    const teaserVideo = document.getElementById('teaser-video');
+    const videoOverlay = document.getElementById('video-overlay');
+    const videoControls = document.getElementById('video-controls');
+    const soundIcon = document.getElementById('sound-icon');
+
+    function putarVideo() {
+      teaserVideo.play();
+      videoOverlay.classList.add('opacity-0', 'pointer-events-none');
+      videoControls.classList.remove('hidden');
+    }
+
+    function jedaVideo() {
+      teaserVideo.pause();
+      videoOverlay.classList.remove('opacity-0', 'pointer-events-none');
+      videoControls.classList.add('hidden');
+    }
+
+    // Interactive Order Simulator & Calculator logic
+    let qty = 1;
+
+    // Helper functions for quantity buttons
+    function tambahJumlah() {
+      qty++;
+      document.getElementById('sim-qty').value = qty;
+      hitungTotal();
+    }
+
+    function kurangJumlah() {
+      if (qty > 1) {
+        qty--;
+        document.getElementById('sim-qty').value = qty;
+        hitungTotal();
+      }
+    }
+
+    // Triggered when selecting "Pilih Rasa" inside Menu Grid card
+    function pilihMenu(nama, harga) {
+      const selectVarian = document.getElementById('sim-varian');
+      
+      // Find and select corresponding option
+      for (let i = 0; i < selectVarian.options.length; i++) {
+        if (selectVarian.options[i].value == harga && selectVarian.options[i].text.includes(nama)) {
+          selectVarian.selectedIndex = i;
+          break;
+
+          document.getElementById('simulasi')
+          .scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+
+      hitungTotal();
+    }
+
+    // Main Calculation Logic
+    function hitungTotal() {
+      const selectVarian = document.getElementById('sim-varian');
+      const basePrice = parseInt(selectVarian.value);
+      const chosenVarianText = selectVarian.options[selectVarian.selectedIndex].text.split(' (')[0];
+
+      // Toppings Checkboxes
+      let toppingsPrice = 0;
+      let toppingLabels = [];
+      
+      const creamcheese = document.getElementById('creamcheese');
+      const cheese = document.getElementById('cheese');
+      const bubble = document.getElementById('bubble');
+
+      if (creamcheese.checked) {
+        toppingsPrice += parseInt(creamcheese.value);
+        toppingLabels.push("Cream Cheese");
+      }
+      if (cheese.checked) {
+        toppingsPrice += parseInt(cheese.value);
+        toppingLabels.push("Cheese");
+      }
+      if (bubble.checked) {
+        toppingsPrice += parseInt(bubble.value);
+        toppingLabels.push("Bubble");
+      }
+
+      // Size
+      const selectSize = document.getElementById('sim-size');
+      const sizePrice = parseInt(selectSize.value);
+      const sizeText = selectSize.options[selectSize.selectedIndex].text.split(' (')[0];
+
+      // Sugar Level
+      const selectSugar = document.getElementById('sim-sugar');
+      const sugarText = selectSugar.options[selectSugar.selectedIndex].text;
+
+      // Qty
+      const quantity = parseInt(document.getElementById('sim-qty').value);
+
+      // Final Math
+      const finalPricePerCup = basePrice + toppingsPrice + sizePrice;
+      const totalCost = finalPricePerCup * quantity;
+
+      // Update Bill Card UI
+      document.getElementById('label-varian').innerText = chosenVarianText;
+      document.getElementById('label-size').innerText = sizeText;
+      document.getElementById('label-sugar').innerText = sugarText;
+      document.getElementById("label-payment").innerText =
+      document.getElementById("sim-payment").value;
+      document.getElementById('label-qty').innerText = quantity + " Cup";
+      document.getElementById('label-topping').innerText = toppingLabels.length > 0 ? toppingLabels.join(', ') : "Tidak Ada";
+      
+      // Currency Formatter
+      document.getElementById('sim-total').innerText = "Rp " + totalCost.toLocaleString('id-ID');
+    }
+
+    function tambahKeKeranjang() {
+      const varianSelect = document.getElementById("sim-varian");
+      const varian =
+        varianSelect.options[varianSelect.selectedIndex].text;
+
+      const ukuran =
+        document.getElementById("sim-size").options[
+          document.getElementById("sim-size").selectedIndex
+        ].text;
+
+      const sugar =
+        document.getElementById("sim-sugar").options[
+          document.getElementById("sim-sugar").selectedIndex
+        ].text;
+
+      const qty =
+        parseInt(document.getElementById("sim-qty").value);
+
+      let topping = [];
+
+      if(document.getElementById("creamcheese").checked)
+        topping.push("Cream Cheese");
+
+      if(document.getElementById("cheese").checked)
+        topping.push("Cheese");
+
+      if(document.getElementById("bubble").checked)
+        topping.push("Bubble");
+
+      if(topping.length === 0)
+        topping.push("Tidak Ada");
+
+      const total = parseInt(
+      document.getElementById("sim-total")
+        .innerText
+        .replace("Rp","")
+        .replace(/\./g,"")
+        .trim()
+    );
+
+    cart.push({
+      varian,
+      ukuran,
+      sugar,
+      topping: topping.join(", "),
+      qty,
+      total
+    });
+
+      tampilkanKeranjang();
+    }
+
+    function renderCart(){
+    const cartList =
+      document.getElementById("cart-list");
+
+    if(cart.length === 0){
+      cartList.innerHTML =
+        '<p class="text-stone-300 text-sm">Belum ada pesanan.</p>';
+      return;
+    }
+
+    let html = "";
+    let grandTotal = 0;
+
+    cart.forEach((item,index)=>{
+
+      grandTotal += item.total;
+
+      html += `
+        <div class="bg-white/10 p-3 rounded-xl text-sm">
+          <div><b>${index+1}. ${item.varian}</b></div>
+          <div>${item.qty} Cup</div>
+          <div>Rp ${item.total.toLocaleString('id-ID')}</div>
+        </div>
+      `;
+    });
+
+    cartList.innerHTML = html;
+
+    document.getElementById("sim-total").innerText =
+      "Rp " + grandTotal.toLocaleString('id-ID');
+  }
+
+    function hapusPesanan(index){
+    cart.splice(index,1);
+
+    tampilkanKeranjang();
+
+    if(cart.length === 0){
+      document.getElementById("sim-total").innerText = "Rp 0";
+    }
+  }
+
+    function tampilkanKeranjang(){
+    const cartList = document.getElementById("cart-list");
+
+    if(cart.length === 0){
+      cartList.innerHTML =
+      `<p class="text-stone-300 text-sm">
+        Belum ada pesanan.
+      </p>`;
+      return;
+    }
+
+    cartList.innerHTML = "";
+
+    cart.forEach((item,index)=>{
+
+      cartList.innerHTML += `
+      <div class="bg-white/10 p-3 rounded-xl mb-2">
+
+        <div class="flex justify-between items-start">
+
+          <div>
+            <p class="font-semibold text-white">
+              ${item.varian}
+            </p>
+
+            <p class="text-sm text-stone-300">
+              ${item.qty} Cup
+            </p>
+
+            <p class="text-sm text-orange-400">
+              Rp ${item.total.toLocaleString('id-ID')}
+            </p>
+          </div>
+
+          <button
+            onclick="hapusPesanan(${index})"
+            class="bg-red-500 hover:bg-red-600 text-white px-2 py-1 rounded-lg text-xs">
+            Hapus
+          </button>
+
+        </div>
+      </div>
+      `;
+    });
+  }
+
+    // Submit Order via WhatsApp Redirect Link Generator
+    function kirimWhatsApp(){
+    const pembayaran = document.getElementById("sim-payment").value;
+    const nama = document.getElementById("customer-name").value;
+    const hp = document.getElementById("customer-phone").value;
+    const alamat = document.getElementById("customer-address").value;
+    const catatan = document.getElementById("customer-note").value;
+
+    if(nama === "" || hp === "" || alamat === ""){
+      alert("Mohon lengkapi data pemesan terlebih dahulu.");
+      return;
+    }
+
+    if(cart.length === 0){
+      alert("Tambahkan minimal 1 pesanan ke keranjang.");
+      return;
+    }
+
+    let totalSemua = 0;
+
+    let pesan =
+      `Halo Admin Thai Tea Cheesy,
+
+      ═══════════════════════
+      DATA PEMESAN
+      ═══════════════════════
+
+      Nama            : ${nama}
+      No. WhatsApp    : ${hp}
+      Alamat          : ${alamat}
+      Pembayaran      : ${pembayaran}
+      Catatan         : ${catatan || "-"}
+
+      ═══════════════════════
+      DETAIL PESANAN
+      ═══════════════════════
+
+      `;
+      
+    cart.forEach((item,index)=>{
+      totalSemua += item.total;
+
+      pesan +=
+    `PESANAN ${index+1}
+    ───────────────────────
+    Varian         : ${item.varian}
+    Ukuran         : ${item.ukuran}
+    Topping        : ${item.topping}
+    Sugar Level    : ${item.sugar}
+    Jumlah         : ${item.qty} Cup
+    Subtotal       : Rp ${item.total.toLocaleString('id-ID')}
+
+    `;
+    });
+
+    pesan +=
+      `═══════════════════════
+      TOTAL PEMBAYARAN
+      ═══════════════════════
+
+      Rp ${totalSemua.toLocaleString('id-ID')}
+
+      Mohon konfirmasi pesanan saya.
+
+      Terima kasih 🙏
+      `;
+
+    window.open(
+      `https://wa.me/6283842192918?text=${encodeURIComponent(pesan)}`,
+      '_blank'
+    );
+  }
+
+    // Run Calculation on first load
+    window.onload = function() {
+      hitungTotal();
+    }
+  </script>
+</body>
+</html>
