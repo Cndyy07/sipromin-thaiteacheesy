@@ -70,7 +70,7 @@ sipromin/
 ### Clone Repository
 
 ```bash
-git clone https://cndyy07.github.io/sipromin-thaiteacheesy/ 
+git clone https://github.com/Cndyy07/sipromin-thaiteacheesy.git
 ```
 
 Kemudian buka folder proyek dan jalankan file **index.html** menggunakan browser.
