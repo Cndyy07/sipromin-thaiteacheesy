@@ -30,7 +30,7 @@ Melalui website ini, kami menghadirkan informasi mengenai outlet, katalog menu, 
 ## 📁 Struktur Proyek
 
 ```text
-SI-Promin/
+sipromin/
 ├── index.html
 ├── img/
 ├── video/
