@@ -4,10 +4,10 @@ Melalui website ini, kami menghadirkan informasi mengenai outlet, katalog menu, 
 
 ## 📸 Preview Website
 ### 🏠 Hero Section
-<img src="preview/home.jpg" width="900">
+<img src="preview/home.png" width="900">
 
 ### 🧋 Menu Section
-<img src="preview/menu.jpg" width="900">
+<img src="preview/menu.png" width="900">
 
 ### 📱 Mobile View
 <img src="preview/responsive.png" width="300">
