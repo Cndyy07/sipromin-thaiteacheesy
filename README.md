@@ -1,8 +1,13 @@
 # 🧋 SI Promin - Thai Tea Cheesy Website
-Website profil resmi **SI Promin Thai Tea Cheesy** yang kami kembangkan menggunakan **HTML, CSS, JavaScript,** dan **Tailwind CSS**. Website ini menerapkan konsep **Mobile-First Responsive Design** sehingga dapat diakses dengan baik melalui perangkat desktop, tablet, maupun smartphone.
-Melalui website ini, kami menghadirkan informasi mengenai outlet, katalog menu, video promosi, serta tampilan antarmuka yang modern dan interaktif untuk memberikan pengalaman pengguna yang lebih baik.
+
+Website **SI Promin Thai Tea Cheesy** merupakan website profil sekaligus media promosi yang kami buat menggunakan **HTML, CSS, JavaScript,** dan **Tailwind CSS**. Website ini dirancang dengan konsep **Mobile-First Responsive Design**, sehingga tampilannya tetap rapi dan nyaman digunakan pada desktop, tablet, maupun smartphone.
+
+Melalui website ini, pengunjung dapat melihat informasi mengenai produk, galeri, video promosi, lokasi outlet, serta informasi lainnya dengan tampilan yang sederhana, menarik, dan mudah digunakan.
+
+---
 
 ## 📸 Preview Website
+
 ### 🏠 Hero Section
 <img src="preview/home.jpg" width="900">
 
@@ -12,20 +17,29 @@ Melalui website ini, kami menghadirkan informasi mengenai outlet, katalog menu, 
 ### 📱 Mobile View
 <img src="preview/responsive.png" width="300">
 
-## ✨ Fitur
-* 📱 Responsive Design
-* 🧋 Katalog Menu Produk
-* 🔍 Filter menu berdasarkan kategori
-* 🕒 Status operasional outlet secara otomatis (Buka/Tutup)
-* 📍 Informasi lokasi outlet
-* 🎥 Video promosi
-* 🎨 Antarmuka modern dan mudah digunakan
+---
+
+## ✨ Fitur Website
+
+- 📱 Responsive Design
+- 🧋 Menampilkan daftar menu Thai Tea Cheesy
+- 🔍 Filter menu berdasarkan kategori
+- 🕒 Status operasional outlet (Buka/Tutup)
+- 📍 Informasi lokasi outlet
+- 🎥 Video promosi
+- 📞 Informasi kontak
+- 🎨 Tampilan sederhana, modern, dan mudah digunakan
+
+---
 
 ## 🛠️ Teknologi yang Digunakan
-* HTML5
-* CSS3
-* JavaScript
-* Tailwind CSS
+
+- HTML5
+- CSS3
+- JavaScript
+- Tailwind CSS
+
+---
 
 ## 📁 Struktur Proyek
 
@@ -35,38 +49,64 @@ sipromin/
 ├── img/
 ├── video/
 ├── preview/
-│   ├── home.png
-│   ├── menu.png
+│   ├── home.jpg
+│   ├── menu.jpg
 │   └── responsive.png
 └── README.md
 ```
 
-**Keterangan:**
+### Keterangan
 
-* **index.html** → File utama yang berisi struktur website beserta CSS dan JavaScript.
-* **img/** → Menyimpan seluruh aset gambar yang digunakan pada website.
-* **video/** → Menyimpan video promosi yang ditampilkan pada website.
-* **preview/** → Berisi screenshot tampilan website yang digunakan pada README.
-* **README.md** → Dokumentasi proyek yang ditampilkan pada halaman utama repository GitHub.
+- **index.html** → File utama website.
+- **img/** → Menyimpan seluruh gambar yang digunakan.
+- **video/** → Menyimpan video promosi.
+- **preview/** → Berisi screenshot tampilan website untuk README.
+- **README.md** → Dokumentasi proyek.
 
-## 🚀 Cara Menjalankan
+---
+
+## 🚀 Cara Menjalankan Website
+
 ### Clone Repository
 
 ```bash
-https://github.com/cndyy07/sipromin-thaiteacheesy.git
+git clone https://cndyy07.github.io/sipromin-thaiteacheesy/ 
 ```
 
-Masuk ke folder proyek, kemudian buka file **index.html** menggunakan browser.
+Kemudian buka folder proyek dan jalankan file **index.html** menggunakan browser.
 
 ### Atau Download ZIP
-1. Klik tombol **Code** pada halaman repository GitHub.
+
+1. Klik tombol **Code** pada repository GitHub.
 2. Pilih **Download ZIP**.
 3. Ekstrak file ZIP.
 4. Buka file **index.html** menggunakan browser.
 
-## 🎯 Tujuan Proyek
-Website ini kami kembangkan sebagai media promosi digital untuk **SI Promin Thai Tea Cheesy** sekaligus sebagai implementasi pembelajaran dalam pengembangan website menggunakan teknologi front-end. Kami berharap website ini dapat membantu memperkenalkan produk dan memberikan informasi kepada pelanggan dengan cara yang lebih menarik dan mudah diakses.
+---
 
+## 🌐 Demo Website
+
+Website dapat diakses melalui:
+
+👉 https://cndyy07.github.io/sipromin-thaiteacheesy/ 
+
+---
+
+## 🎯 Tujuan Proyek
+
+Website ini dibuat sebagai media promosi digital untuk **SI Promin Thai Tea Cheesy** sekaligus sebagai tugas mata kuliah **Pengembangan Website Multimedia**. Melalui website ini, kami ingin memberikan informasi mengenai produk dan usaha dengan tampilan yang menarik, responsif, dan mudah diakses oleh pengguna.
+
+---
+
+## 👥 Pengembang
+
+Disusun oleh:
+
+- Cindy Olivia
+- Cintya Yolanda
+
+---
 
 ## 📄 Lisensi
-Proyek ini dibuat untuk keperluan edukasi, pengembangan portofolio, dan promosi bisnis SI Promin.
+
+Proyek ini dibuat untuk keperluan pembelajaran, portofolio, dan media promosi SI Promin Thai Tea Cheesy.
