@@ -53,7 +53,7 @@ SI-Promin/
 ### Clone Repository
 
 ```bash
-https://github.com/Cndyy07/sipromin-thaiteacheesy.git
+https://github.com/cndyy07/sipromin-thaiteacheesy.git
 ```
 
 Masuk ke folder proyek, kemudian buka file **index.html** menggunakan browser.
